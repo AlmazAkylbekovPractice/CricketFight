@@ -7,12 +7,14 @@ public class PlayerThrowBehavior : IPlayerBehavior
     public void Enter(Player player)
     {
         player.isThrowing = true;
+        player.isReady = false;
         player.anim.SetBool(player.THROWING_TAG, true);
     }
 
     public void Exit(Player player)
     {
         player.isThrowing = false;
+        player.isReady = true;
         player.anim.SetBool(player.THROWING_TAG, false);
     }
 

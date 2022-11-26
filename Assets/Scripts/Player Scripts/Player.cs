@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public Animator anim;
     public CharacterController control;
 
-
     //State Pattern
     private Dictionary<Type, IPlayerBehavior> behaviorsMap;
     private IPlayerBehavior currentBehavior;
@@ -20,6 +19,7 @@ public class Player : MonoBehaviour
     //States
     public bool isHitting;
     public bool isThrowing;
+    public bool isReady;
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     private void LoadPlayer()
     {
-        SetInputForPlayer();
+        SetupManagersPlayer();
         LoadComponents();
         InitializeBehabiors();
         SetDefaultBehavior();
@@ -54,9 +54,10 @@ public class Player : MonoBehaviour
         this.SetBehaviorIdle();
     }
 
-    private void SetInputForPlayer()
+    private void SetupManagersPlayer()
     {
         InputManager.Instance.SetPlayer(this);
+        GameManager.Instance.SetPlayer(this);
     }
 
 

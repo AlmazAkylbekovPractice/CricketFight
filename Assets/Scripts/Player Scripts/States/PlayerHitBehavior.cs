@@ -6,13 +6,17 @@ public class PlayerHitBehavior : IPlayerBehavior
 {
     public void Enter(Player player)
     {
+        GameManager.Instance.HittedBall();
+
         player.isHitting = true;
+        player.isReady = false;
         player.anim.SetBool(player.HITTING_TAG, true);
     }
 
     public void Exit(Player player)
     {
         player.isHitting = false;
+        player.isReady = true;
         player.anim.SetBool(player.HITTING_TAG, false);
     }
 

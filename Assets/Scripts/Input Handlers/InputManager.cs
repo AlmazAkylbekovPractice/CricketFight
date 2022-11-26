@@ -18,14 +18,17 @@ public class InputManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] private Player playerObj;
+
     [SerializeField] private Button hitButton;
     [SerializeField] private Button throwButton;
-
-    [SerializeField] private Player playerObj;
+    [SerializeField] private Text welcomeMessage;
+    [SerializeField] private Text hitBallsMessage;
 
     private void Awake()
     {
         _instance = this;
+
         AssignButtons();
         HighlightButton();
     }
@@ -54,10 +57,18 @@ public class InputManager : MonoBehaviour
         playerObj.SetBehaviorThrow();
     }
 
-
     private void HighlightButton()
     {
         hitButton.Select();
+    }
+
+    public void DisableWelcomeMessage()
+    {
+        if (welcomeMessage.enabled)
+            welcomeMessage.enabled = false;
+
+        if (!hitBallsMessage.enabled)
+            hitBallsMessage.enabled = true;
     }
 
 }
