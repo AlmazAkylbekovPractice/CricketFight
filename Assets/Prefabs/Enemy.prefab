@@ -215,6 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05894f6b3be3245bba5a04e48ec253c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  appleSpawnPlace: {fileID: 3897007667319484448}
+  ballPrefab: {fileID: 4440981401065248612, guid: fa5ed9e9232ac4655a99efb76b0c4857, type: 3}
+  throwTimer: 2.15
+  isThrowing: 1
 --- !u!1 &748784336072135183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,8 +2044,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36737993, y: 0.19532716, z: 0.9941038}
-  m_Center: {x: 0.07659351, y: 0.03570151, z: 0.29913557}
+  m_Size: {x: 0.23873079, y: 0.20458242, z: 0.9995984}
+  m_Center: {x: 0.09540758, y: -0.046549063, z: 0.3018808}
 --- !u!1 &7116686638598899307
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,28 @@ public class PlayerThrowBehavior : IPlayerBehavior
         {
             player.SetBehaviorIdle();
         }
+
+        float time = player.anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
+
+        Debug.Log(time);
+
+        if (time >= 0.54f)
+        {
+            if (player.currentBall == null)
+            {
+                player.InstantiateBall();
+            }
+        }
+        else if (time >= 0.1f && time < 0.6f)
+        {
+            player.currentBall = null;
+        }
+
+
     }
 
+    private GameObject Instantiate(GameObject ballPrefab, Vector3 position, Quaternion identity)
+    {
+        throw new NotImplementedException();
+    }
 }

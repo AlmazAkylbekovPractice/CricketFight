@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &889795671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889795672}
+  - component: {fileID: 889795673}
+  m_Layer: 0
+  m_Name: Player Target
+  m_TagString: PlayerTarget
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889795672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889795671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.47, y: 0.52, z: -14.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 4657733112852155410}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &889795673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889795671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 31.028408, y: 8.03557, z: 1}
+  m_Center: {x: -9.927776, y: 1.4897614, z: 0}
 --- !u!1 &16142198147604421
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +658,7 @@ GameObject:
   - component: {fileID: 3475294855527508613}
   m_Layer: 0
   m_Name: mixamorig:Sword_joint
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -627,7 +672,7 @@ Transform:
   m_GameObject: {fileID: 2549659102917935031}
   m_LocalRotation: {x: -0.4999999, y: -0.50000006, z: 0.49999967, w: 0.50000036}
   m_LocalPosition: {x: 0.007702401, y: 0.07959965, z: 0.02820829}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6817467016693552177}
@@ -644,8 +689,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36737993, y: 0.19532716, z: 0.9941038}
-  m_Center: {x: 0.07659351, y: 0.03570151, z: 0.29913557}
+  m_Size: {x: 0.23873079, y: 0.20458242, z: 0.9995984}
+  m_Center: {x: 0.09540758, y: -0.046549063, z: 0.3018808}
 --- !u!1 &2609954977417916237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1735,7 @@ Transform:
   - {fileID: 6589656594762955735}
   - {fileID: 3736077418709931772}
   - {fileID: 5927704160386073319}
+  - {fileID: 889795672}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1749,6 +1795,10 @@ MonoBehaviour:
   THROWING_TAG: isThrowing
   isHitting: 0
   isThrowing: 0
+  isReady: 0
+  ballPrefab: {fileID: 4440981401065248612, guid: fa5ed9e9232ac4655a99efb76b0c4857, type: 3}
+  currentBall: {fileID: 0}
+  ballSpawner: {fileID: 8488727473205999634}
 --- !u!1 &5830281355993553778
 GameObject:
   m_ObjectHideFlags: 0

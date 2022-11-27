@@ -16,13 +16,14 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private Player playerObj;
+    [SerializeField] public Player playerObj;
 
     [SerializeField] private int playerHits;
     [SerializeField] private int playerHitAttempts;
 
+    [SerializeField] private int playerThrows;
 
-    [SerializeField] private GameObject enemy;
+    [SerializeField] public GameObject enemy;
     [SerializeField] private Transform spawnPos;
 
     private GameObject currentEnemy;
@@ -52,9 +53,51 @@ public class GameManager : MonoBehaviour
                     currentEnemy.transform.eulerAngles.x,
                     currentEnemy.transform.eulerAngles.y + 180,
                     currentEnemy.transform.eulerAngles.z);
-
             }
         }
     }
+
+    public void SuccessfullHit()
+    {
+        if (playerHits < 3)
+        {
+            InputManager.Instance.ColorizeBall(playerHits);
+
+        } 
+
+        InputManager.Instance.SwitchTextForHit(true);
+        playerHits++;
+
+        if (playerHits >= 3)
+        {
+            SwitchToThrowTraining();
+        }
+    }
+
+    public void SuccessfullThrow()
+    {
+        if (playerThrows < 3)
+        {
+            InputManager.Instance.ColorizeBall(playerThrows);
+        }
+
+        playerThrows++;
+    }
+
+    public void SwitchToThrowTraining()
+    {
+        InputManager.Instance.SwitchToThrowTraining();
+        currentEnemy.SetActive(false);
+    }
+
+    public void SwitchToEnemy()
+    {
+        if (!currentEnemy.activeSelf)
+        {
+            currentEnemy.SetActive(true);
+            currentEnemy.GetComponent<Enemy>().isThrowing = false;
+        }
+    }
+
 
 }

@@ -21,6 +21,11 @@ public class Player : MonoBehaviour
     public bool isThrowing;
     public bool isReady;
 
+    public GameObject ballPrefab;
+    public GameObject currentBall;
+
+    public Transform ballSpawner;
+
     private void Start()
     {
         LoadPlayer();
@@ -107,6 +112,12 @@ public class Player : MonoBehaviour
     {
         var behavior = this.GetBehavior<PlayerThrowBehavior>();
         this.SetBehavior(behavior);
+    }
+
+    public void InstantiateBall()
+    {
+        currentBall = Instantiate(ballPrefab, ballSpawner.transform.position, Quaternion.identity);
+        currentBall.GetComponent<Ball>().byEnemy = false;
     }
 
 
